@@ -1,52 +1,18 @@
 import mongoose from "mongoose";
 
-const addressSchema =  new mongoose.Schema({
+const productSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    description: { type: Array, required: true },
+    price: { type: Number, required: true },
+    offerPrice: { type: Number, required: true },
+    image: { type: Array, required: true },
+    category: { type: String, required: true },
+    inStock: { type: Boolean, default: true },
+  },
+  { timestamps: true }
+);
 
-    userId: {
-        type: String,
-        required : true
-    },
-    firstName: {
-        type: String,
-        required : true
-    },
-    lastName: {
-        type: String,
-        required : true
-    },
-    email: {
-        type: String,
-        required : true
-    },
-    street: {
-        type: String,
-        required : true
-    },
-    city: {
-        type: String,
-        required : true
-    },
-    state: {
-        type: String,
-        required : true
-    },
-    zipcode: {
-        type: Number,
-        required : true
-    },
-    country: {
-        type: String,
-        required : true
-    },
-    phone: {
-        type: String,
-        required : true
-    },
-
-})
-
-
-const Address = mongoose.models.address || mongoose.model('address', addressSchema);
-
-
-export default Address;
+const Product =
+  mongoose.models.product || mongoose.model("product", productSchema);
+export default Product;
