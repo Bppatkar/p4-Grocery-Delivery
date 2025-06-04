@@ -15,6 +15,7 @@ export const AppContextProvider = ({ children }) => {
   const [isSeller, setIsSeller] = useState(false);
   const [showUserLogin, setShowUserLogin] = useState(false);
   const [products, setProducts] = useState([]);
+  console.log('Products:', products);
   const [cartItems, setCartItems] = useState({});
   const [searchQuery, setSearchQuery] = useState({});
   //Fetch Seller Status
@@ -46,18 +47,21 @@ export const AppContextProvider = ({ children }) => {
   };
 
   //Fetch All Products
-  const fetchProducts = async () => {
-    try {
-      const { data } = await axios.get("/api/product/list");
-      if (data.success) {
-        setProducts(data.products);
-      } else {
-        toast.error(data.message);
-      }
-    } catch (error) {
-      toast.error(error.message);
+ const fetchProducts = async () => {
+  try {
+    console.log("Fetching products...");
+    const { data } = await axios.get("/api/product/list");
+    console.log("Received data:", data);
+    if (data.success) {
+      setProducts(data.products);
+    } else {
+      toast.error(data.message);
     }
-  };
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    toast.error(error.message);
+  }
+};
 
   //Add Product To Cart
   const addToCart = (itemId) => {
