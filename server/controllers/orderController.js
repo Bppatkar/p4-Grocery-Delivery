@@ -57,6 +57,7 @@ export const placeOrderCOD = async (req, res) => {
 };
 
 //Place Order Stripe :/api/order/stripe
+// create account in stripe payment system
 export const placeOrderStripe = async (req, res) => {
   try {
     const { items, address } = req.body;
@@ -143,7 +144,6 @@ export const placeOrderStripe = async (req, res) => {
 };
 
 //Stripe Webhooks to verify Payments Action :/stripe
-
 export const stripeWebhooks = async (req, res) => {
   //Stripe Gateway Initialize
   const stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY);
