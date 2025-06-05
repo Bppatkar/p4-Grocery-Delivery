@@ -40,7 +40,7 @@ const Orders = () => {
               <div>
                 {order.items.map((item, index) => (
                   <div key={index} className="flex flex-col ">
-                    <p className="font-medium text-[var(--color-primary)]">
+                    <p className="font-medium text-gray-400">
                       {item.product.name}{" "}
                       <span className="text-[var(--color-primary)]">
                         x {item.quantity}
@@ -51,8 +51,8 @@ const Orders = () => {
               </div>
             </div>
 
-            <div className="text-sm md:text-base text-[var(--color-primary)]/70">
-              <p className="text-[var(--color-primary)]/80">
+            <div className="text-sm md:text-base text-gray-500">
+              <p className="text-gray-400">
                 {order.address?.firstName} {order.address?.lastName}
               </p>
               <p>
@@ -66,12 +66,12 @@ const Orders = () => {
               <p>{order.address?.phone}</p>
             </div>
 
-            <p className="font-medium text-lg my-auto text-[var(--color-primary)]/70">
+            <p className="font-medium text-lg my-auto text-red-500">
               {currency}
               {order.amount}
             </p>
 
-            <div className="flex flex-col text-sm md:text-base text-[var(--color-primary)]/70">
+            <div className="flex flex-col text-sm md:text-base text-black">
               <p>Method: {new Date(order.createdAt).toLocaleDateString()}</p>
               <p>Date: {order.orderDate}</p>
               <p>Payment: {order.isPaid ? "Paid" : "Pending"}</p>
