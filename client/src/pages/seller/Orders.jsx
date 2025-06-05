@@ -21,13 +21,15 @@ const Orders = () => {
     fetchOrders();
   }, []);
   return (
-    <div className="no-scrollbar flex-1 h-[95vh] overflow-y-scroll">
+    <div className="no-scrollbar flex-1 h-[95vh] overflow-y-scroll bg-[var(--color-background)]">
       <div className="md:p-10 p-4 space-y-4">
-        <h2 className="text-lg font-medium">Orders List</h2>
+        <h2 className="text-lg font-medium text-[var(--color-primary)]">
+          Orders List
+        </h2>
         {orders.map((order, index) => (
           <div
             key={index}
-            className="flex flex-col  md:items-center md:flex-row  gap-5 justify-between p-5 max-w-4xl rounded-md border border-gray-300 "
+            className="flex flex-col  md:items-center md:flex-row  gap-5 justify-between rounded-md border border-gray-300 p-5 max-w-4xl"
           >
             <div className="flex gap-5 max-w-80">
               <img
@@ -38,7 +40,7 @@ const Orders = () => {
               <div>
                 {order.items.map((item, index) => (
                   <div key={index} className="flex flex-col ">
-                    <p className="font-medium">
+                    <p className="font-medium text-[var(--color-primary)]">
                       {item.product.name}{" "}
                       <span className="text-[var(--color-primary)]">
                         x {item.quantity}
@@ -49,8 +51,8 @@ const Orders = () => {
               </div>
             </div>
 
-            <div className="text-sm md:text-base text-black/60">
-              <p className="text-black/80">
+            <div className="text-sm md:text-base text-[var(--color-primary)]/70">
+              <p className="text-[var(--color-primary)]/80">
                 {order.address?.firstName} {order.address?.lastName}
               </p>
               <p>
@@ -64,12 +66,12 @@ const Orders = () => {
               <p>{order.address?.phone}</p>
             </div>
 
-            <p className="font-medium text-lg my-auto text-black/70">
+            <p className="font-medium text-lg my-auto text-[var(--color-primary)]/70">
               {currency}
               {order.amount}
             </p>
 
-            <div className="flex flex-col text-sm md:text-base text-black/60">
+            <div className="flex flex-col text-sm md:text-base text-[var(--color-primary)]/70">
               <p>Method: {new Date(order.createdAt).toLocaleDateString()}</p>
               <p>Date: {order.orderDate}</p>
               <p>Payment: {order.isPaid ? "Paid" : "Pending"}</p>
@@ -82,3 +84,4 @@ const Orders = () => {
 };
 
 export default Orders;
+
