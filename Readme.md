@@ -17,3 +17,15 @@ This is a **Grocery Delivery Web Application** built using the **MERN stack** (M
 - **Database:** MongoDB
 - **Authentication:** JWT (JSON Web Tokens)
 - **Deployment:** Vercel
+
+##### Seller Account Info
+- [Seller Dashboard](liveLink/Seller)
+- **Email:** admin@example.com
+- **Password:** admin@12345
+
+###### Online Payment Card Info
+- **Card Number:** 4242 4242 4242 4242
+- **Valid Date:** 12/34
+- **CVV:** 123
+- **Country:** United States
+- **Zip Code:** 12345

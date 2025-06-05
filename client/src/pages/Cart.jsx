@@ -92,7 +92,7 @@ const Cart = () => {
         });
 
         if (data.success) {
-          window.location.href = data.url;
+          window.location.replace(data.url);
         } else {
           toast.error(data.message);
         }
