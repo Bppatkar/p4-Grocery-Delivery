@@ -55,7 +55,7 @@ const Navbar = () => {
             type="text"
             placeholder="Search products"
           />
-          <im src={assets.search_icon} alt="search" className="w-4 h-4" />
+          <img src={assets.search_icon} alt="search" className="w-4 h-4" />
         </div>
 
         <div
