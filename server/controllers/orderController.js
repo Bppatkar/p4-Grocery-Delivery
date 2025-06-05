@@ -1,8 +1,6 @@
-import { now } from "mongoose";
 import Order from "../models/Order.js";
 import Product from "../models/Product.js";
 import Stripe from "stripe";
-import { response } from "express";
 import User from "../models/User.js";
 
 export const placeOrderCOD = async (req, res) => {
@@ -61,7 +59,7 @@ export const placeOrderCOD = async (req, res) => {
 export const placeOrderStripe = async (req, res) => {
   try {
     const { items, address } = req.body;
-    const userId = req.userId; 
+    const userId = req.userId;
     const { origin } = req.headers;
 
     if (!address || !items || items.length === 0) {
@@ -156,7 +154,7 @@ export const stripeWebhooks = async (req, res) => {
       process.env.STRIPE_WEBHOOK_SECRET
     );
   } catch (error) {
-    response.status(400).send(`Webhook Error:${error.message}`);
+    res.status(400).send(`Webhook Error:${error.message}`);
   }
 
   //Handle the event
@@ -192,7 +190,7 @@ export const stripeWebhooks = async (req, res) => {
       console.error(`Unhandled event type ${event.type}`);
       break;
   }
-  response.json({ received: true });
+  res.json({ received: true });
 };
 
 //Get Orders by User ID:/api/order/user
