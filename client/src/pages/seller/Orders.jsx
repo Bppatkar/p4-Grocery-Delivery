@@ -51,7 +51,11 @@ const Orders = () => {
 
             <div className="text-sm md:text-base text-black/60">
               <p className="text-black/80">
-                {order.address.firstName} {order.address.lastName}
+                {order.address && (
+                  <span>
+                    {order.address.firstName} {order.address.lastName}
+                  </span>
+                )}
               </p>
               <p>
                 {order.address.street}, {order.address.city}
