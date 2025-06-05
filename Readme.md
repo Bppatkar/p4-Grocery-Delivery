@@ -29,3 +29,7 @@ This is a **Grocery Delivery Web Application** built using the **MERN stack** (M
 - **CVV:** 123
 - **Country:** United States
 - **Zip Code:** 12345
+
+
+###### server - [Live](https://p4-grocery-delivery-backend.vercel.app/)
+###### client - [Live]()
