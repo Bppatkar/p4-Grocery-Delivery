@@ -130,7 +130,7 @@ const AddAddress = () => {
                 address={address}
                 name="zipcode"
                 type="number"
-                placeholder=""
+                placeholder="Zipcode"
                 Zip
                 code
               />
