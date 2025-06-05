@@ -52,7 +52,7 @@ const Orders = () => {
             </div>
 
             <div className="text-sm md:text-base text-black">
-              <p className="text-gray-300">
+              <p className="text-[var(--color-primary)]">
                 {order.address?.firstName} {order.address?.lastName}
               </p>
               <p>
