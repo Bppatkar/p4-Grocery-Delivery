@@ -40,7 +40,7 @@ const Orders = () => {
               <div>
                 {order.items.map((item, index) => (
                   <div key={index} className="flex flex-col ">
-                    <p className="font-medium text-gray-400">
+                    <p className="font-medium text-black">
                       {item.product.name}{" "}
                       <span className="text-[var(--color-primary)]">
                         x {item.quantity}
@@ -51,8 +51,8 @@ const Orders = () => {
               </div>
             </div>
 
-            <div className="text-sm md:text-base text-gray-500">
-              <p className="text-gray-400">
+            <div className="text-sm md:text-base text-black">
+              <p className="text-gray-300">
                 {order.address?.firstName} {order.address?.lastName}
               </p>
               <p>
