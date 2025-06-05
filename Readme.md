@@ -32,4 +32,4 @@ This is a **Grocery Delivery Web Application** built using the **MERN stack** (M
 
 
 ###### server - [Live](https://p4-grocery-delivery-backend.vercel.app/)
-###### client - [Live]()
+###### client - [Live](https://p4-grocery-delivery-frontend.vercel.app/)
